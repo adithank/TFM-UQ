@@ -1,0 +1,23 @@
+{
+  "Performance": {
+    "MaxRAM": 16,
+    "UseGPU": true,
+    "MaxGPUMem": 6,
+    "Precision": "single"
+  },
+  "Deformation": [
+    {
+      "wdw_size": 128,
+      "wdw_spacing": 64,
+      "Nreps": 25,
+      "SubPixelInterpolationMode": "gaussian"
+    },
+    {
+      "wdw_size": 64,
+      "wdw_spacing": 32,
+      "Nreps": 25,
+      "SubPixelInterpolationMode": "gaussian"
+    }
+    
+  ]
+}
