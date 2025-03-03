@@ -5,7 +5,7 @@ MATLAB code for 'Uncertainty-Aware Traction Force Microscopy'.  https://www.bior
 
 Please setup the PIV parameters in 'PIVConfig.json' with the following fields :
 
-'''
+'''json
 {
   "Performance": {
     "MaxRAM": 16, % Max RAM to be used for array creation
