@@ -61,6 +61,12 @@ methods (Access = public)
 
    function obj = postProcess(obj)
        obj.output = obj.postProcessPIVUQ(obj.output);
+       
+       % Remove drift by median subtraction 
+       for ii = 1: length(obj.output)
+            obj.output(ii).UPost = obj.output(ii).UPost - median(obj.output(ii).UPost(:),'omitmissing');
+            obj.output(ii).VPost = obj.output(ii).VPost - median(obj.output(ii).VPost(:),'omitmissing');
+       end
    end
 
 end
