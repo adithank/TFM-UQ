@@ -1,11 +1,11 @@
 # TFM-UQ
 MATLAB code for 'Uncertainty-Aware Traction Force Microscopy'.  https://www.biorxiv.org/content/10.1101/2024.07.05.602172v2.abstract
 
-1) PIV-UQ demo : 'demo_PIVUQ.m'
+## 1) PIV-UQ demo : 'demo_PIVUQ.m'
 
 Please setup the PIV parameters in 'PIVConfig.json' with the following fields :
 
-'''json
+```json
 {
   "Performance": {
     "MaxRAM": 16, % Max RAM to be used for array creation
@@ -24,18 +24,19 @@ Please setup the PIV parameters in 'PIVConfig.json' with the following fields :
   ]
 }
 
-'''
+```
 
-'''
-PIV.output 
+PIV.output is a struct variable that contains the following fields : 
+```matlab
 
 xvec,yvec % X and Y coordinates of sizes (nY,nX) respectively
-U, V % PIV vector 
+UPost, VPost % Post-processed PIV vector (Use this)
+U, V % Unprocessed PIV vector 
 Usamp, Vsamp % Bootstrap samples with a size (nY,nX,nB). nB is the number of bootstrap reps.
-UPost, VPost % Post-processed PIV vector
 UStd, VStd % Standard deviation calculated from bootstrap reps.
 delInds % "Bad windows" as a mask
 
-'''
+```
 
-Run 'MCMCGibbs_TFMUQ.m' for demo.
+## 2) Run 'MCMCGibbs_TFMUQ.m' for TFM-UQ analysis using the PIV-UQ data
+
